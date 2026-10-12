@@ -1,0 +1,75 @@
+
+header{
+    background-color: white;
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+}
+
+h1{
+    text-align: center;
+    color: #1e3a8a;
+    margin: 0;
+}
+
+.buscador-input {
+    margin-top: 16px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.buscador-input:focus {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+#lista-usuarios {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+#lista-usuarios li{
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#lista-usuarios li:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.14);
+    
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 24px;
+}
+
+#limpiar-busqueda {
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+#limpiar-busqueda:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.14);
+}
