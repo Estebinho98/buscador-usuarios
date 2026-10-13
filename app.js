@@ -46,17 +46,21 @@ async function cargarUsuarios() {
 busqueda.addEventListener("input", () => {
     const textoBuscado = busqueda.value.trim().toLowerCase();
 
+    
+ 
     const usuariosFiltrados = usuarios.filter((usuario) =>
         usuario.name.toLowerCase().includes(textoBuscado) || usuario.email.toLowerCase().includes(textoBuscado)
     );
 
     mostrarUsuarios(usuariosFiltrados);
 
-    if (usuariosFiltrados.length === 0) {
-        mensaje.textContent = "No se encontraron usuarios";
+    if (textoBuscado === "") {
+    mensaje.textContent = `Se muestran ${usuarios.length} usuarios`;
+    } else if (usuariosFiltrados.length === 0) {
+    mensaje.textContent = "No se encontraron usuarios";
     } else {
-        mensaje.textContent =
-            `Usuarios encontrados: ${usuariosFiltrados.length}`;
+    mensaje.textContent =
+        `Resultados encontrados: ${usuariosFiltrados.length}`;
     }
 
 });
@@ -64,7 +68,7 @@ busqueda.addEventListener("input", () => {
 botonLimpiar.addEventListener("click", () =>{
     busqueda.value = "";
     mostrarUsuarios(usuarios);
-    mensaje.textContent = `Se cargaron ${usuarios.length} usuarios`;
+    mensaje.textContent = `Se muestran ${usuarios.length} usuarios`;
 
 });
 
